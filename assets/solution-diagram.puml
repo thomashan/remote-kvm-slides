@@ -1,0 +1,17 @@
+@startuml
+node "Node1"
+node "Node2"
+node "Node3"
+node "Node5"
+node "Node4"
+node "Node6"
+
+cloud "Internet"
+
+[Node1] <--> [Internet]
+[Node2] <--> [Internet]
+[Node3] <-l-> [Internet]
+[Node4] <-u-> [Internet]
+[Node5] <-u-> [Internet]
+[Node6] <-r-> [Internet]
+@enduml

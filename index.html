@@ -1,40 +1,188 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>Remote KVM</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <section>
+                <h1>Problem Statement</h1>
+            </section>
+            <section>
+                <h2>19/07/2024</h2>
+                <h2>Around the world...</h2>
+            </section>
+            <section data-auto-animate>
+                <h2>Sydney Airport</h2>
+                <div class="r-stack">
+                    <img src="assets/sydney-airport.jpeg">
+                </div>
+            </section>
+            <section data-auto-animate>
+                <h2>Coles</h2>
+                <div class="r-stack">
+                    <img class="r-stretch" src="assets/coles.jpeg" alt="coles">
+                    <img src="assets/sydney-airport.jpeg" alt="sydney-airport" style="width: 75px; margin: 0;">
+                </div>
+            </section>
+            <section data-auto-animate>
+                <h2>Woolworths</h2>
+                <div class="r-stack">
+                    <img src="assets/woolworths.jpeg" alt="woolworths">
+                    <img src="assets/sydney-airport.jpeg" alt="sydney-airport" style="width: 75px; margin: 0;">
+                    <img src="assets/coles.jpeg" alt="coles" style="width: 75px; margin: 0; margin-top:30px;">
+                </div>
+            </section>
+            <section data-auto-animate>
+                <h2>Charlotte Motor Speedway</h2>
+                <div class="r-stack">
+                    <img src="assets/charlotte-motor-speedway.jpg" alt="charlotte-motor-speedway">
+                    <img src="assets/sydney-airport.jpeg" alt="sydney-airport" style="width: 75px; margin: 0;">
+                    <img src="assets/coles.jpeg" alt="coles" style="width: 75px; margin: 0; margin-top:30px;">
+                    <img src="assets/woolworths.jpeg" alt="woolworths" style="width: 75px; margin: 0; margin-top:60px;">
+                </div>
+            </section>
+            <section data-auto-animate>
+                <h2>Times Square</h2>
+                <div class="r-stack">
+                    <img src="assets/times-square.png" alt="times-square">
+                    <img src="assets/sydney-airport.jpeg" alt="sydney-airport" style="width: 75px; margin: 0;">
+                    <img src="assets/coles.jpeg" alt="coles" style="width: 75px; margin: 0; margin-top:30px;">
+                    <img src="assets/woolworths.jpeg" alt="woolworths" style="width: 75px; margin: 0; margin-top:60px;">
+                    <img src="assets/charlotte-motor-speedway.jpg" alt="charlotte-motor-speedway" style="width: 75px; margin: 0; margin-top:90px;">
+                </div>
+            </section>
+        </section>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+        <section>
+            <section>
+                <h2>Problem (Redefined)</h2>
+                <p class="fragment">On 19/07/2024 the crowd struck 8.5M devices</p>
+                <p class="fragment">Non-cloud IT infrastructure (even critical ones) have no resiliency built in and is often an afterthought</p>
+                <p class="fragment">The problem is not limited to windows but all computers</p>
+            </section>
+            <section>
+                <h2>Aftermath</h2>
+                <ul>
+                    <li class="fragment"><a target="_blank"
+                                            href="https://www.msn.com/en-us/money/companies/microsoft-to-take-massive-hit-as-fortune-500-firms-suffer-5-4b-in-losses-from-crowdstrike-outage-study/ar-BB1qyuXp?ocid=BingNewsVerp">USA:
+                        caused at least USD$5.4B in damage to Fortune 500</a></li>
+                    <li class="fragment"><a target="_blank" href="https://www.abc.net.au/news/2024-07-22/crowdstrike-outage-bill-for-australian-business-may-be-1-billion/104127486">Australia:
+                        estimated to be $1B in damage</a></li>
+                    <li class="fragment"><a target="_blank" href="https://www.abc.net.au/news/2024-07-20/australians-hit-by-global-crowdstrike-it-outage/104120736">Australia: most vulnerable (SME,
+                        regional towns) hardest hit</a></li>
+                    <li class="fragment"><a target="_blank" href="https://www.msn.com/en-us/money/topstocks/is-it-too-late-to-buy-crowdstrike-stock-now/ar-AA1ovFhP?ocid=BingNewsVerp">Crowdstrike
+                        stock prices have plummeted by 45% from its all-time high</a></li>
+                    <li class="fragment">Multiple lawsuits for both Crowdstrike and clients
+                        <a target="_blank"
+                           href="https://ktla.com/business/press-releases/accesswire/897427/class-action-filed-against-crowdstrike-holdings-inc-crwd-seeking-recovery-for-investors-contact-levi-korsinsky/">[1]</a>
+                        <a target="_blank"
+                           href="https://www.businesswire.com/news/home/20240730461048/en/CORRECTING-and-REPLACING-Labaton-Keller-Sucharow-LLP-Announces-Securities-Class-Action-Lawsuit-Filed-Against-CrowdStrike-Holdings-Inc.-and-Certain-Executives">[2]</a>
+                        <a target="_blank"
+                           href="https://www.businesswire.com/news/home/20240725409630/en/Gibbs-Law-Group-LLP-Investigates-Potential-Legal-Claims-on-Behalf-of-Business-Owners-Affected-by-CrowdStrike-Outage">[3]</a>
+                        <a target="_blank" href="https://www.sauderschelkopf.com/wp-content/uploads/2024/07/AS-FILED-Delta-Complaint-8.6.24.pdf">[4]</a>
+                        <a target="_blank" href="https://www.itnews.com.au/news/crowdstrike-down-after-report-delta-air-to-seek-compensation-over-it-outage-610251">[5]</a>
+                        <a target="_blank" href="https://www.bbc.com/news/articles/cy08ljxndr4o">[6]</a>
+                        <a target="_blank" href="https://edition.cnn.com/2024/08/07/business/delta-passengers-sue-crowdstrike-meltdown/index.html">[7]</a>
+                    </li>
+                </ul>
+            </section>
+        </section>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+        <section>
+            <h2>Mission</h2>
+            <p class="fragment">Build business continuity through incorruptible resiliency</p>
+            <p class="fragment">Combat single point of failure</p>
+        </section>
+
+        <section>
+
+            <section>
+                <h2>Every business is different</h2>
+                <a target="_blank" href="https://www.mckinsey.com/capabilities/risk-and-resilience/our-insights/a-technology-survival-guide-for-resilience">
+                    Resilience means understanding the criticality of a business process, the capability of the underlying technology, the business impact if the technology fails, and the
+                    organization’s risk tolerance.
+                </a>
+            </section>
+        </section>
+
+
+        <section>
+            <section>
+                <h2>Ever Evolving</h2>
+                <p>New exploits for bricking windows. CVE-2024-6768</p>
+                <a target="_blank" href="https://www.forbes.com/sites/daveywinder/2024/08/12/new-microsoft-windows-10-11-server-blue-screen-of-death-warning/">[1]</a>
+                <a target="_blank" href="https://in.mashable.com/tech/80549/new-windows-vulnerability-could-cause-bsods-similar-to-recent-microsoft-crowdstrike-incident/">[2]</a>
+                <p class="fragment">Updates cannot be applied after being bricked</p>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Solutions?</h2>
+                <p class="fragment">There is no silver bullet</p>
+                <ul class="fragment">
+                    <li><a target="_blank" href="https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/tech-forward/it-resilience-for-the-digital-age">IT resiliency manifesto</a></li>
+                    <li><a target="_blank" href="https://www.mckinsey.com/capabilities/risk-and-resilience/our-insights/a-technology-survival-guide-for-resilience">Guidelines</a></li>
+                </ul>
+            </section>
+            <section>
+                <h2>Why is it hard?</h2>
+                <p>Identifying and analysing critical infrastructure assets is time-consuming and sometimes physically hard to do</p>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Solution</h2>
+                <ul>
+                    <li>Identify: Identify critical infrastructure/application through following the customer journey instead of focusing on remediating critical infrastructure/application as a solution to resiliency</li>
+                    <li>Assess: Go through the customer journey when failure happens and assess impact on revenue, probability of failure, observability of failure</li>
+                    <li>Remediate: Once the failure is observed, how can we recover and how quickly?</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Monitor/Control/Protect via KVM over IP For Enterprise</h2>
+                <p>Our answer to observability and remediation of failures</p>
+            </section>
+            <section>
+                <h2>PCI-E Form</h2>
+                <img src="assets/pci-form.jpg" alt="pci-form" style="height: 500px; margin: 0;">
+                <p>(Illustration Purposes Only)</p>
+            </section>
+            <section>
+                <h2>Compact Form</h2>
+                <img src="assets/compact-form.jpg" alt="pci-form" style="height: 500px; margin: 0;">
+                <p>(Illustration Purposes Only)</p>
+            </section>
+        </section>
+    </div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+    });
+</script>
+</body>
 </html>
