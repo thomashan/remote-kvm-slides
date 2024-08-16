@@ -1,0 +1,39 @@
+@startuml
+skinparam handwritten true
+
+node "E1Node1" #red
+node "E1Node2" #red
+node "E2Node1" #red
+node "E2Node2"
+node "E3Node1"
+node "E3Node2"
+node "E4Node1"
+node "E4Node2"
+
+cloud "Internet" {
+    cloud "Enterprise1" <<NetworkDown>>
+    cloud "Enterprise2"
+    cloud "Enterprise3"
+    cloud "Enterprise4"
+}
+
+skinparam cloud<<NetworkDown>> {
+    BackgroundColor Red
+}
+
+[Enterprise1] -l- [Enterprise2]
+[Enterprise1] -- [Enterprise3]
+[Enterprise1] -- [Enterprise4]
+[Enterprise2] -- [Enterprise3]
+[Enterprise2] -u- [Enterprise4]
+[Enterprise3] -r- [Enterprise4]
+
+[Enterprise1] <-[#red]u-> [E1Node1]
+[Enterprise1] <-[#red]u-> [E1Node2]
+[Enterprise2] <-[#red]u-> [E2Node1]
+[Enterprise2] <-u-> [E2Node2]
+[Enterprise3] <--> [E3Node1]
+[Enterprise3] <--> [E3Node2]
+[Enterprise4] <--> [E4Node1]
+[Enterprise4] <--> [E4Node2]
+@enduml
