@@ -69,9 +69,9 @@
         <section>
             <section>
                 <h2>Problem (Redefined)</h2>
-                <p class="fragment">On 19/07/2024 the crowd struck 8.5M devices</p>
+                <p class="fragment">On 19/07/2024 the crowd struck 8.5M windows devices</p>
                 <p class="fragment">Non-cloud IT infrastructure (even critical ones) have no resiliency built in and is often an afterthought</p>
-                <p class="fragment">The problem is not limited to windows but all computers</p>
+                <p class="fragment"><a href="https://www.theregister.com/2024/07/21/crowdstrike_linux_crashes_restoration_tools/" target="_blank">The problem is not limited to windows but all computers</a></p>
             </section>
             <section>
                 <h2>Aftermath</h2>
@@ -99,27 +99,17 @@
                     </li>
                 </ul>
             </section>
-        </section>
-
-        <section>
-            <h2>Mission</h2>
-            <p class="fragment">Build business continuity through incorruptible resiliency</p>
-            <p class="fragment">Combat single point of failure</p>
-        </section>
-
-        <section>
-
             <section>
-                <h2>Every business is different</h2>
-                <a target="_blank" href="https://www.mckinsey.com/capabilities/risk-and-resilience/our-insights/a-technology-survival-guide-for-resilience">
-                    Resilience means understanding the criticality of a business process, the capability of the underlying technology, the business impact if the technology fails, and the
-                    organization’s risk tolerance.
-                </a>
+                <h2>Still not convinced?</h2>
             </section>
-        </section>
-
-
-        <section>
+            <section>
+                <h2>Costs</h2>
+                <ul>
+                    <li class="fragment"><a href="https://www.fierce-network.com/cloud/measuring-cost-crowdstrike-outage" target="_blank">8.5M devices * 1.5hr (service man deploy time) = 12.75M hours lost</a></li>
+                    <li class="fragment">12.75M hours * USD$82.50 = USD$700M</li>
+                    <li class="fragment">MTTR 72 hours = +USD$500M? during downtime</li>
+                </ul>
+            </section>
             <section>
                 <h2>Ever Evolving</h2>
                 <p>New exploits for bricking windows. CVE-2024-6768</p>
@@ -128,6 +118,13 @@
                 <p class="fragment">Updates cannot be applied after being bricked</p>
             </section>
         </section>
+
+        <section>
+            <h2>Mission</h2>
+            <p class="fragment">Build business continuity through incorruptible resiliency</p>
+            <p class="fragment">Combat single point of failure</p>
+        </section>
+
         <section>
             <section>
                 <h2>Solutions?</h2>
@@ -144,18 +141,26 @@
         </section>
 
         <section>
+            <section><h1>Until now...</h1></section>
+            <section>
+                <h1>resilience2.net</h1>
+                <ul class="fragment">
+                    <li>Reboot all computers with a single click</li>
+                    <li>Apply manual remediation steps with a single click</li>
+                </ul>
+                <p class="fragment"><span style="color: red">72 hour</span> MTTR to <span style="color: green">30 seconds</span></p>
+            </section>
+        </section>
+
+        <section>
             <section>
                 <h2>Solution</h2>
-                <ul>
-                    <li>Identify: Identify critical infrastructure/application through following the customer journey instead of focusing on remediating critical infrastructure/application as a solution to resiliency</li>
-                    <li>Assess: Go through the customer journey when failure happens and assess impact on revenue, probability of failure, observability of failure</li>
-                    <li>Remediate: Once the failure is observed, how can we recover and how quickly?</li>
-                </ul>
+                <img src="assets/gtm-solution.png" alt="gtm-solution" style="height: 400px">
             </section>
             <section>
-                <h2>Monitor/Control/Protect via KVM over IP For Enterprise</h2>
-                <p>Our answer to observability and remediation of failures</p>
-                <p>N.B: Explain why hardware component is scalable</p>
+                <h1>Hardware</h1>
+                <p>Scalability resolved by using any SBC (e.g. Raspberry Pi, Orange Pi, etc)</p>
+                <p><a href="https://www.slant.co/topics/1629/~best-single-board-computers" target="_blank">There are more than 70 SBC models</a></p>
             </section>
             <section>
                 <h2>PCI-E Form</h2>
@@ -171,16 +176,7 @@
         </section>
 
         <section>
-            <section><h1>Solution</h1></section>
-            <section data-auto-animate>
-                <h2>Before KVM over IP</h2>
-                <img src="assets/solution-diagram-pre-kvm.png" alt="solution-diagram-pre-kvm" style="height: 400px">
-            </section>
-            <section data-auto-animate>
-                <h2>After KVM over IP</h2>
-                <img src="assets/solution-diagram-post-kvm.png" alt="solution-diagram-pre-kvm" style="height: 400px">
-                <p>Mass control nodes with a single click</p>
-            </section>
+            <section><h2>GTM</h2></section>
         </section>
 
         <section>
@@ -242,7 +238,7 @@
         <section>
             <section>
                 <h1>Future work</h1>
-                integration with existing crisis management
+                integration with existing crisis management and business continuity management system
                 * servicenow
                 * battleground
             </section>
@@ -252,6 +248,42 @@
             <section><h1>Team</h1></section>
         </section>
 
+        <section>
+            <section>
+                <h1>Question to companies</h1>
+                <p class="fragment">Can you afford to pay?</p>
+                <p class="fragment">Can you afford not to pay?</p>
+            </section>
+
+        </section>
+
+        <section>
+            <section><h1>Appendix</h1></section>
+            <section>
+                <h2>Solution</h2>
+                <ul>
+                    <li>Identify: Identify critical infrastructure/application through following the customer journey instead of focusing on remediating critical infrastructure/application as a solution to resiliency</li>
+                    <li>Assess: Go through the customer journey when failure happens and assess impact on revenue, probability of failure, observability of failure</li>
+                    <li>Remediate: Once the failure is observed, how can we recover and how quickly?</li>
+                </ul>
+            </section>
+            <section data-auto-animate>
+                <h2>Before KVM over IP</h2>
+                <img src="assets/solution-diagram-pre-kvm.png" alt="solution-diagram-pre-kvm" style="height: 400px">
+            </section>
+            <section data-auto-animate>
+                <h2>After KVM over IP</h2>
+                <img src="assets/solution-diagram-post-kvm.png" alt="solution-diagram-pre-kvm" style="height: 400px">
+                <p>Mass control nodes with a single click</p>
+            </section>
+            <section>
+                <h2>Why is resiliency important?</h2>
+                <a target="_blank" href="https://www.mckinsey.com/capabilities/risk-and-resilience/our-insights/a-technology-survival-guide-for-resilience">
+                    Resilience means understanding the criticality of a business process, the capability of the underlying technology, the business impact if the technology fails, and the
+                    organization’s risk tolerance.
+                </a>
+            </section>
+        </section>
     </div>
 </div>
 

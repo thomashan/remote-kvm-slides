@@ -1,0 +1,17 @@
+@startuml
+skinparam handwritten true
+
+rectangle {
+    (Identify) as (Identify) << Consulting >>
+    (Assess) as (Assess) << Consulting >>
+    (Identify) - (Remediate)
+    (Remediate) - (Assess)
+}
+
+rectangle {
+    (Remediate) -d- (Software)
+    (Software) - (BCMS Integration)
+    (Software) -d- (Hardware)
+}
+
+@enduml
