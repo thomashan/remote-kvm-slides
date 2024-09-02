@@ -1,0 +1,37 @@
+@startuml
+skinparam handwritten true
+
+actor Depositor
+
+rectangle "Cash Sweep System" {
+    rectangle "KYC" {
+        rectangle Internal {
+            (In house)
+        }
+        rectangle External {
+            (KYC Australia)
+            (KYC Hub)
+            (Sumsub)
+            (Moody's)
+            (LSEG)
+            (Chandler)
+        }
+    }
+
+    rectangle "Cash Movement" {
+        rectangle "Direct Entry" {
+        }
+        rectangle RTGS {
+        }
+    }
+
+    rectangle "Account Information" {
+        rectangle OpenBankingApi
+    }
+}
+
+Depositor -u-> KYC : Gives
+Depositor -u-> "Cash Movement" : Authorises
+Depositor -u-> "Account Information" : Authorises
+
+@enduml
