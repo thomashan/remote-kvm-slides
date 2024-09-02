@@ -1,5 +1,4 @@
 @startuml
-skinparam handwritten true
 
 actor Depositor
 
@@ -30,7 +29,7 @@ rectangle "Cash Sweep System" {
     }
 }
 
-Depositor -u-> KYC : Gives
+Depositor -u-> KYC : Provides
 Depositor -u-> "Cash Movement" : Authorises
 Depositor -u-> "Account Information" : Authorises
 
