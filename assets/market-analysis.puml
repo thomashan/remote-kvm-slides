@@ -1,0 +1,35 @@
+@startuml
+skinparam handwritten true
+
+rectangle "Existing Enterprise KVM" {
+    (IP-KVM) - [iDRAC]
+    (IP-KVM) -u- [IPMI]
+    (IP-KVM) -d- [iRMC]
+    (Backup)
+}
+
+rectangle "Existing Remote KVM" {
+    (BliKVM)
+    (PiKVM)
+    (TinyPilot)
+}
+
+rectangle "BCMS" {
+    (ServiceNow)
+    (battleground)
+    (Quantivate)
+    (Riskonnect)
+    (Sungard Availability Services)
+    (Preparis)
+}
+
+rectangle "resiliency2.net" {
+    (Out of Band) - "Existing Enterprise KVM"
+    (Mass control scripting) -- "Existing Remote KVM"
+    (BCMS Integration) -- "BCMS"
+}
+
+rectangle "BCMS" {
+}
+
+@enduml
