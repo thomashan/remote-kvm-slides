@@ -6,6 +6,7 @@ rectangle "Existing Enterprise KVM" {
     (IP-KVM) -u- [IPMI]
     (IP-KVM) -d- [iRMC]
     (Backup)
+    (Manage Multiple Nodes SPF)
 }
 
 rectangle "Existing Remote KVM" {
@@ -24,6 +25,7 @@ rectangle "BCMS" {
 }
 
 rectangle "resiliency2.net" {
+    (No SPF) - "Existing Enterprise KVM"
     (Out of Band) - "Existing Enterprise KVM"
     (Mass control scripting) -- "Existing Remote KVM"
     (BCMS Integration) -- "BCMS"
