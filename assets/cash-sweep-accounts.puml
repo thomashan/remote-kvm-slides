@@ -1,0 +1,62 @@
+@startuml
+
+class Bank << (A, #FF7700) >> {
+    Interest: 0.01% / 0.01%
+    ---
+    Total: $800,000
+    ..
+    Insured: $250,000
+    ..
+    Uninsured: $550,000
+}
+
+package "Managed" {
+    class Bank1 << (A, #FF7700) >> {
+        Interest: 5.75% (4 months) / 4.4%
+        ---
+        Total: $250,000
+        ..
+        Insured: $250,000
+        ..
+        Uninsured: $0
+    }
+    class Bank2 << (A, #FF7700) >> {
+        Interest: 5.4% (4 months) / 2.85%
+        ---
+        Total: $250,000
+        ..
+        Insured: $250,000
+        ..
+        Uninsured: $0
+    }
+    class Bank3 << (A, #FF7700) >> {
+        Interest: 5.35% (4 months) / 4.75%
+        ---
+        Total: $250,000
+        ..
+        Insured: $250,000
+        ..
+        Uninsured: $0
+    }
+    class Bank4 << (A, #FF7700) >> {
+        Interest: 4.75% / 4.75%
+        ---
+        Total: $50,000
+        ..
+        Insured: $50,000
+        ..
+        Uninsured: $0
+    }
+
+    Bank1 .d.> Bank2
+    Bank2 .d.> Bank3
+    Bank3 .d.> Bank4
+}
+
+'Bank -r- Managed
+
+note "The account will be split to maximise the insured amount and the interest earned\nNew account(s) will be used:\n*when the account fills the FCS $250k insurance\n*after the introductory rate period finishes" as mangedNote
+mangedNote .u. Managed
+
+
+@enduml
