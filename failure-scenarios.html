@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Node failure scenarios</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>Network failure scenarios</h1>
+            See <a href="https://www.geeksforgeeks.org/2-tier-and-3-tier-architecture-in-networking/" target="_blank">here</a> for details.
+            For business sizing <a href="https://www.agilitybusiness.com.au/knowledge-centre/micro-small-medium-or-large-whats-the-difference-in-business" target="_blank">here</a>.
+        </section>
+
+        <section>
+            <section>
+                <h2>Simple networks</h2>
+            </section>
+            <section>
+                <h2>Daisy chained ($)</h2>
+                <ul>
+                    <li>micro</li>
+                    <li>small</li>
+                </ul>
+                <img src="assets/network-daisy-chained.png" alt="network-daisy-chained">
+            </section>
+            <section>
+                <h2>Star ($)</h2>
+                <ul>
+                    <li>micro</li>
+                    <li>small</li>
+                </ul>
+                <img src="assets/network-star.png" alt="network-star">
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>2-Tier architecture ($$/$$$)</h2>
+                <ul>
+                    <li>small</li>
+                    <li>medium</li>
+                    <li>large</li>
+                </ul>
+                <img src="assets/network-two-tier.jpg" alt="network-two-tier" style="height: 400px;">
+            </section>
+            <section>
+                <h2>Improved 2-tier architecture ($$$/$$$$)</h2>
+                <ul>
+                    <li>medium</li>
+                    <li>large</li>
+                </ul>
+                <img src="assets/network-two-tier-improved.jpg" alt="network-two-tier-improved" style="height: 500px;">
+            </section>
+        </section>
+
+        <section>
+            <h2>3-Tier architecture ($$$$$)</h2>
+            <ul>
+                <li>large</li>
+            </ul>
+            <img src="assets/network-three-tier.jpg" alt="network-three-tier" style="height: 500px;">
+        </section>
+
+        <section>
+            <h2>Conclusion</h2>
+            Only 3-tier architecture has enough resiliency for reliable out-of-band communication.
+        </section>
+
+        <section>
+            <section>
+                <h1>Large Corporate Firewall Issue</h1>
+                More info <a href="https://lightyear.ai/blogs/where-does-my-network-firewall-go-considerations-on-network-perimeter" target="_blank">here</a>.
+
+            </section>
+            <section>
+                <h2>Firewall implementation</h2>
+                <ul>
+                    <li>For out-of-band KVM communication, multiple firewalls need to be open.</li>
+                    <li>Firewall change takes 2 weeks to 3 months at each layer.</li>
+                    <li>For large corporates, it may be against the security policies to even expose the out-of-bound KVM.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Multi-site firewalls</h2>
+                <img src="assets/network-multi-site-firewalls.png" alt="network-multi-site-firewalls" style="height: 500px;">
+            </section>
+        </section>
+
+        <section>
+            <h1>Multi-node KVM</h1>
+            The KVM itself becomes a single point of failure if it manages multiple nodes.
+        </section>
+
+        <section>
+            <h1>Conclusion</h1>
+            Although some existing KVMs claim to offer out-of-band management, it only means KVMs are out-of-band capable and does not provide out-of-band capabilities straight away.
+            The only way to get out-of-band capability out of the box is to use a secure independent communication channel.
+        </section>
+    </div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+    });
+</script>
+</body>
+</html>
