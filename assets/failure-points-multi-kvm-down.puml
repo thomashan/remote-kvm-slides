@@ -1,0 +1,74 @@
+@startuml
+skinparam handwritten true
+
+node "E1Node1" #red
+node "E1Node2" #red
+node "E2Node1" #red
+node "E2Node2"
+node "E3Node1"
+node "E3Node2"
+node "E4Node1"
+node "E4Node2"
+
+node "E1Node1KVM" <<OutOfBand>>
+node "E1Node2KVM" <<OutOfBand>>
+node "E2Node1KVM" <<OutOfBand>>
+node "E2Node2KVM" <<OutOfBand>>
+node "E3Node1KVM" <<OutOfBand>>
+node "E3Node2KVM" <<OutOfBand>>
+node "E4Node1KVM" <<OutOfBand>>
+node "E4Node2KVM" <<OutOfBand>>
+
+cloud "Internet" {
+    cloud "Enterprise1" <<NetworkDown>>
+    cloud "Enterprise2"
+    cloud "Enterprise3"
+    cloud "Enterprise4"
+}
+
+cloud "Private Network" {
+    cloud "Enterprise1PN"
+    cloud "Enterprise2PN"
+    cloud "Enterprise3PN"
+    cloud "Enterprise4PN"
+}
+
+skinparam cloud<<NetworkDown>> {
+    BackgroundColor Red
+}
+
+[Enterprise1] -l- [Enterprise2]
+[Enterprise1] -- [Enterprise3]
+[Enterprise1] -- [Enterprise4]
+[Enterprise2] -- [Enterprise3]
+[Enterprise2] -u- [Enterprise4]
+[Enterprise3] -r- [Enterprise4]
+
+[Enterprise1] <-[#red]u-> [E1Node1]
+[Enterprise1] <-[#red]u-> [E1Node2]
+[Enterprise2] <-[#red]u-> [E2Node1]
+[Enterprise2] <-u-> [E2Node2]
+[Enterprise3] <--> [E3Node1]
+[Enterprise3] <--> [E3Node2]
+[Enterprise4] <--> [E4Node1]
+[Enterprise4] <--> [E4Node2]
+
+E1Node1 -u- E1Node1KVM
+E1Node2 -u- E1Node2KVM
+E2Node1 -u- E2Node1KVM
+E2Node2 -u- E2Node2KVM
+E3Node1 -- E3Node1KVM
+E3Node2 -- E3Node2KVM
+E4Node1 -- E4Node1KVM
+E4Node2 -- E4Node2KVM
+
+E1Node1KVM -- Enterprise1PN
+E1Node2KVM -- Enterprise1PN
+E2Node1KVM -- Enterprise2PN
+E2Node2KVM -- Enterprise2PN
+E3Node1KVM -- Enterprise3PN
+E3Node2KVM -- Enterprise3PN
+E4Node1KVM -- Enterprise4PN
+E4Node2KVM -- Enterprise4PN
+
+@enduml
