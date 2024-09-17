@@ -1,0 +1,1 @@
+All companies that have critical activity running on non-cloud infrastructure.
