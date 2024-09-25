@@ -1,0 +1,1 @@
+Target hardware can be desktop, kiosks, billboards, POS, ATM anything with a USB and a video out that needs unattended manual intervention when shit hits the fan.
