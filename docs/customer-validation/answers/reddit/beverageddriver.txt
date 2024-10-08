@@ -1,0 +1,23 @@
+Hey Thomas,
+Happy to share what I can. I'll cover your initial questions first and we can go from there - I may have to leave out some specifics but should be fine.
+
+Were you affected by the CrowdStrike incident on 19/07/2024?
+
+My organisation was affected by the incident, although not nearly as badly as some others I'd seen. We only had a handful of devices that suffered from the bootloop issue, and most affected devices just had the BSOD and were able to restart normally. We did have a couple of servers go down.
+
+How do you typically handle PC/kiosk/POS (node) outages?
+
+We have a pretty standard set response for outages like this, however the first step is to understand that it's actually an outage, and the root cause. Once we can determine it's an outage we can move from there. We'd create a master ticket as a base, link any devices that were affected to said ticket, and if necessary, have the relevant people jump into a meeting to make a call on whether to enact BCP. In this case, we did do exactly that, and BCP was determined to not be required as we were able to reboot the servers that went down without requiring cutover to redundancy backups. If the outage were more severe or we weren't able to reboot the servers, I'm sure BCP would've been required.
+
+
+Who is responsible for managing node outages, and how long does it usually take to resolve them?
+
+I kind of touched on this in the last question, but essentially the first step is always going to be recovery rather than redundancy. Once we can confirm if we're able to regain critical systems (or not), we can determine if we need to cut over to our backups. I'm not directly responsible for any of this as I've moved out of the sysadmin area and I'm a PM now, but we all have printed hardcopies of our disaster recovery plan available, and also in a document locker in office. I suppose it's also important to note that we would be running comms to the business at large during all of this, the last thing you want is users panicking or trying to fix it themselves. Outages can be very useful to external actors, potentially creating an environment that is very vulnerable.
+
+
+Could you walk me through the last time you experienced a node outage?
+
+In the case of crowdstrike we were somewhat fortunate as I was one of the users affected immediately. I'm not in support anymore, but I did my stint in it and understand how to troubleshoot an issue. I experienced the BSOD in the middle of the meeting, and actually found an old reddit thread from some time ago detailing the same issue - before the outage had become public. I'll see if I can find it, but basically it was the same bsod error code and it was Crowdstrike causing it. I was able to forward that information to our helpdesk and greater IT, and we were able to react very quickly to the incident. In fact I'm pretty sure my post was either first or second on r/sysadmin regarding the issue, where people were still reporting being blindsided by the issue an hour or two later. Helpdesk from that information were able to confirm a couple more devices that we'd lost, and created a support ticket. We then lost the couple of servers, but as mentioned we were able to reboot them. There was a quick crisis meeting where the incident was deemed P2. Once everything was back up and running and the dust has settled, we all helped in root cause analysis for the incident. We followed this up with a mock incident with various prompts put together by our cybersec team, which is essentially a mock scenario of an outage where the team is drip fed prompts and we need to react as a team to mitigate the outage. Something more mundane that happened more recently was having one of our many rack mounted power supplies die - in this case UPS covered the downtime so we were able to cut across to the redundant server while we replaced the failed hardware, and then cut back over outside of business hours. Essentially the same process though - determine the issue/outage, design plan for mitigation, determine if redundancy is required, recover the system, learn from the failure.
+
+I hope that covers what you're looking for, but I'm happy to clarify anything I've said as well, or answer any further questions.
+Cheers
