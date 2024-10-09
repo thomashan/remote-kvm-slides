@@ -1,0 +1,5 @@
+yeah offcoarse, no problem
+* luckily my clients or myself where not impacted by the outage
+* How do you typically handle PC/kiosk/POS (node) outages? We Nuke them, and deploy new machines due to everything being deployed IaC. A great source is this one http://cloudscaling.com/blog/cloud-computing/the-history-of-pets-vs-cattle/
+* Who is responsible for managing node outages, and how long does it usually take to resolve them?With my current client there is a dedicated team namely Office Automation (Kantoor Automatisering in Dutch)
+* Could you walk me through the last time you experienced a node outage? Last time we had a node outage, we loadbalanced all the traffic from Azure to the on prem datacenter. It took two minutes to have the whole company up and running again. We also employ alot of containers that we run in Azure as a container instance, and if shit hits the fan, we loadbalance the containers to an on prem vm's so that our container workloads also keep running with minimal downtime
