@@ -12,6 +12,7 @@
 * Who takes care of the node outage(s), and how long did it take to remediate the outage?
 * Talk to me through the last time node outage happened?
 * Are you available for follow on customer validation interview?
+* Who else in the organisation can help?
 
 # Customer validation questions
 * What is the cost of remediation, and what is the impact on the business while remediation is being done?
