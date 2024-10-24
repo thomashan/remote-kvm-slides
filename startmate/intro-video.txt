@@ -1,0 +1,9 @@
+1. What your company does: We build hardware/software solution to take total control of non-cloud IT infrastructure to provide 100% resiliency and manage private cloud.
+
+2. Why you are the right team to address the problem: Having worked in the IT industry for over 20 years, I have experienced how hard it is to maintain critical IT infrastructure.
+
+3. The problem your company is solving: There are two problems we are solving for. First problem: Business do not have automated way to recover from critical non-cloud IT infrastructure. Second problem: Companies are burning money to use cloud providers. Some companies are willing to burn money but most won't if the right story is told.
+
+4. How you are addressing the problem: With a hardware/software solution that takes total control of the target nodes. Massing monitoring, alerting, detection, and control are the features that will allow companies to recovery in 30s instead of 72 hours.
+
+5. What you have achieved to date (traction): Spoken to 12 customer over 3 week period. Starting to build prototype for demoing.
