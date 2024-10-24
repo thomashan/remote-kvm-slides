@@ -5,14 +5,28 @@
 # Set the stage for the interview
 * Clearly explain the intention of the interview
 * How long the interview will take
+* All questions related to non-cloud infrastructure
 
 # Customer discovery questions
-* Were you affected by the Crowdstrike incident on 19/07/2024? 
-* How do you usually deal with PC/kiosk/POS (node) outages?
-* Who takes care of the node outage(s), and how long did it take to remediate the outage?
-* Talk to me through the last time node outage happened?
-* Are you available for follow on customer validation interview?
-* Who else in the organisation can help?
+## General
+* When was the last time non-cloud IT infrastructure had an outage? Non-cloud IT infra includes PC, servers, routers and switches, kiosk, POS, ATM.
+* Walk me through what happened in your world when the outage happened.
+* What was the cause of the outage?
+* How long did it take to recover from the outage?
+* Who takes care of outages?
+* What would be the benefit to the organisation if the pain points could be addressed.
+* Can I get in contact with those people?
+
+## Crowdstrike
+* Were you affected by the Crowdstrike incident on 19/07/2024?
+
+## Tech
+* How is the infrastructure monitored? And what is the pain point?
+* How is security breaches detected? And what is the pain point?
+
+## Follow on
+* Are you available for follow-on validation interviews?
+
 
 # Customer validation questions
 * What is the cost of remediation, and what is the impact on the business while remediation is being done?
